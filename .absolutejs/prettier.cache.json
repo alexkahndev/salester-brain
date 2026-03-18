@@ -1,0 +1,21 @@
+{
+	"configHash": "6c8mxcj4rr0o",
+	"files": {
+		"absolute.config.ts": "2l9yz6lillxis",
+		"src/constants.ts": "2ahxcn85urxxi",
+		"src/backend/server.ts": "3mm0vnpcol2ml",
+		"src/frontend/utils/edenTreaty.ts": "23azkniy63cd9",
+		"src/frontend/styles/colors.ts": "es9k21q6ja39",
+		"src/frontend/pages/ReactExample.tsx": "2pd7t6mcq95y9",
+		"src/frontend/components/OAuthLink.tsx": "vzsxycj4hsa1",
+		"src/frontend/components/Head.tsx": "gxuqyw614csu",
+		"src/frontend/components/ProfilePicture.tsx": "qudulxairug9",
+		"src/frontend/components/Dropdown.tsx": "1rc8nkkdi02zd",
+		"src/frontend/components/App.tsx": "3vcgezt9pm1gw",
+		"eslint.config.mjs": "2uz20f6vt3u4t",
+		"tsconfig.json": "1e4h7800ce4jx",
+		"package.json": "o0wonxf8d2vo",
+		"src/frontend/styles/reset.css": "33d0qgrev3j92",
+		"src/frontend/styles/react-example.css": "205cx0tmwzwl4"
+	}
+}
