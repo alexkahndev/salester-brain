@@ -1,4 +1,3 @@
-import { ReactExample } from '../frontend/pages/ReactExample';
 import {
 	asset,
 	handleReactPageRequest,
@@ -6,24 +5,33 @@ import {
 	prepare
 } from '@absolutejs/absolute';
 import { Elysia } from 'elysia';
+import { BrainShowcase } from '../frontend/pages/BrainShowcase';
+import { ReactExample } from '../frontend/pages/ReactExample';
 
 const { absolutejs, manifest } = await prepare();
 
-const server = new Elysia()
+export const server = new Elysia()
 	.use(absolutejs)
 
 	.get('/', () =>
 		handleReactPageRequest(
-			ReactExample,
-			asset(manifest, 'ReactExampleIndex'),
-			{ initialCount: 0, cssPath: asset(manifest, 'ReactExampleCSS') }
+			BrainShowcase,
+			asset(manifest, 'BrainShowcaseIndex'),
+			{ cssPath: asset(manifest, 'BrainShowcaseCSS') }
+		)
+	)
+	.get('/brain', () =>
+		handleReactPageRequest(
+			BrainShowcase,
+			asset(manifest, 'BrainShowcaseIndex'),
+			{ cssPath: asset(manifest, 'BrainShowcaseCSS') }
 		)
 	)
 	.get('/react', () =>
 		handleReactPageRequest(
 			ReactExample,
 			asset(manifest, 'ReactExampleIndex'),
-			{ initialCount: 0, cssPath: asset(manifest, 'ReactExampleCSS') }
+			{ cssPath: asset(manifest, 'ReactExampleCSS'), initialCount: 0 }
 		)
 	)
 	.use(networking)

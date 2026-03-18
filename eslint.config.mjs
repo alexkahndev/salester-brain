@@ -9,10 +9,10 @@ import { defineConfig } from 'eslint/config';
 import absolutePlugin from 'eslint-plugin-absolute';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import promisePlugin from 'eslint-plugin-promise';
 import reactPlugin from 'eslint-plugin-react';
 import reactCompilerPlugin from 'eslint-plugin-react-compiler';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import promisePlugin from 'eslint-plugin-promise';
 import securityPlugin from 'eslint-plugin-security';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -20,6 +20,17 @@ import tseslint from 'typescript-eslint';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig([
+	{
+		ignores: [
+			'build/**',
+			'dist/**',
+			'public/**',
+			'.absolutejs/**',
+			'node_modules/**',
+			'absolute.config.ts'
+		]
+	},
+
 	pluginJs.configs.recommended,
 
 	...tseslint.configs.recommended,
@@ -44,7 +55,21 @@ export default defineConfig([
 			'@stylistic/padding-line-between-statements': [
 				'error',
 				{ blankLine: 'always', next: 'return', prev: '*' }
-			]
+			],
+
+			'@typescript-eslint/await-thenable': 'error',
+			'@typescript-eslint/consistent-type-assertions': [
+				'error',
+				{ assertionStyle: 'never' }
+			],
+			'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+			'@typescript-eslint/no-floating-promises': 'error',
+			'@typescript-eslint/no-misused-promises': 'error',
+			'@typescript-eslint/no-non-null-assertion': 'error',
+			'@typescript-eslint/no-unnecessary-condition': 'error',
+			'@typescript-eslint/no-unnecessary-type-assertion': 'error',
+			'@typescript-eslint/prefer-nullish-coalescing': 'error',
+			'@typescript-eslint/prefer-optional-chain': 'error'
 		}
 	},
 
@@ -97,19 +122,20 @@ export default defineConfig([
 			],
 			'arrow-body-style': ['error', 'as-needed'],
 			'consistent-return': 'error',
+			curly: 'error',
+			'default-case': 'error',
 			eqeqeq: 'error',
 			'func-style': [
 				'error',
 				'expression',
 				{ allowArrowFunctions: true }
 			],
-			'import/no-cycle': 'error',
 			'import/no-default-export': 'error',
 			'import/no-relative-packages': 'error',
-			'import/no-unused-modules': ['error', { missingExports: true }],
 			'import/order': ['error', { alphabetize: { order: 'asc' } }],
 			'no-await-in-loop': 'error',
 			'no-console': ['error', { allow: ['warn', 'error'] }],
+			'no-constructor-return': 'error',
 			'no-debugger': 'error',
 			'no-duplicate-case': 'error',
 			'no-duplicate-imports': 'error',
@@ -117,11 +143,13 @@ export default defineConfig([
 			'no-empty-function': 'error',
 			'no-empty-pattern': 'error',
 			'no-empty-static-block': 'error',
+			'no-eval': 'error',
 			'no-fallthrough': 'error',
 			'no-floating-decimal': 'error',
 			'no-global-assign': 'error',
 			'no-implicit-coercion': 'error',
 			'no-implicit-globals': 'error',
+			'no-implied-eval': 'error',
 			'no-loop-func': 'error',
 			'no-magic-numbers': [
 				'warn',
@@ -132,6 +160,11 @@ export default defineConfig([
 			'no-new-native-nonconstructor': 'error',
 			'no-new-wrappers': 'error',
 			'no-param-reassign': 'error',
+			'no-promise-executor-return': 'error',
+			'no-restricted-exports': [
+				'error',
+				{ restrictDefaultExports: { direct: true } }
+			],
 			'no-restricted-imports': [
 				'error',
 				{
@@ -150,8 +183,25 @@ export default defineConfig([
 					]
 				}
 			],
+			'no-restricted-syntax': [
+				'error',
+				{
+					message:
+						'Do not use IIFEs. Extract to a named function instead.',
+					selector:
+						'CallExpression[callee.type="ArrowFunctionExpression"]'
+				},
+				{
+					message:
+						'Do not use IIFEs. Extract to a named function instead.',
+					selector: 'CallExpression[callee.type="FunctionExpression"]'
+				}
+			],
 			'no-return-await': 'error',
+			'no-self-compare': 'error',
 			'no-shadow': 'error',
+			'no-template-curly-in-string': 'error',
+			'no-throw-literal': 'error',
 			'no-undef': 'error',
 			'no-unneeded-ternary': 'error',
 			'no-unreachable': 'error',
@@ -159,6 +209,7 @@ export default defineConfig([
 			'no-useless-concat': 'error',
 			'no-useless-return': 'error',
 			'no-var': 'error',
+			'object-shorthand': 'error',
 			'prefer-arrow-callback': 'error',
 			'prefer-const': 'error',
 			'prefer-destructuring': [
@@ -174,7 +225,8 @@ export default defineConfig([
 			'promise/no-nesting': 'warn',
 			'promise/no-promise-in-callback': 'warn',
 			'promise/no-return-wrap': 'error',
-			'promise/param-names': 'error'
+			'promise/param-names': 'error',
+			'require-await': 'error'
 		}
 	},
 	{
@@ -225,13 +277,9 @@ export default defineConfig([
 	{
 		files: ['eslint.config.mjs'],
 		rules: {
-			'no-magic-numbers': 'off'
-		}
-	},
-	{
-		files: ['eslint.config.mjs'],
-		rules: {
-			'import/no-default-export': 'off'
+			'import/no-default-export': 'off',
+			'no-magic-numbers': 'off',
+			'no-restricted-exports': 'off'
 		}
 	},
 	{

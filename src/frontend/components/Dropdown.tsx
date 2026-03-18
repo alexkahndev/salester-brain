@@ -13,6 +13,7 @@ export const Dropdown = () => (
 	>
 		<summary>Pages</summary>
 		<nav>
+			<a href="/brain">Brain</a>
 			<a href="/react">React</a>
 		</nav>
 	</details>
