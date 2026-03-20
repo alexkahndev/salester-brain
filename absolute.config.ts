@@ -4,5 +4,6 @@ export default defineConfig({
 	assetsDirectory: 'src/backend/assets',
 	buildDirectory: 'build',
 	reactDirectory: 'src/frontend',
-	publicDirectory: 'public'
+	publicDirectory: 'public',
+	stylesConfig: 'src/frontend/styles'
 });

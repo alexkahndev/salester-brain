@@ -13,7 +13,7 @@ import {
 	LCG_MODULUS,
 	LCG_MULTIPLIER,
 	SHUFFLE_SEED
-} from '../../../../constants';
+} from '../../../constants';
 
 type GLTFBrain = {
 	materials: { 'Brain pink': MeshStandardMaterial };

@@ -14,7 +14,7 @@ import {
 	ROTATION_AMP,
 	ROTATION_SPEED,
 	SYNAPSE_COLOR_G
-} from '../../../../../constants';
+} from '../../../../constants';
 import { BrainModel } from '../BrainModel';
 import { MemoryPoints } from '../MemoryPoints';
 import { ThinkingWaves } from '../ThinkingWaves';

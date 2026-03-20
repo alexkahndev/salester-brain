@@ -49,7 +49,7 @@ import {
 	TENDRIL_Z_SEED_MULT,
 	VEC3_STRIDE,
 	VEC3_Z
-} from '../../../../constants';
+} from '../../../constants';
 
 export type ChatState = 'idle' | 'thinking' | 'responding';
 

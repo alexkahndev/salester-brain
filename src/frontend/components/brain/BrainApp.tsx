@@ -15,7 +15,7 @@ import {
 	POLAR_ANGLE_DEN,
 	POLAR_ANGLE_NUM,
 	RESPONDING_ACTIVITY
-} from '../../../../constants';
+} from '../../../constants';
 import { ChatPanel } from './ChatPanel';
 import { type BrainVariant, VARIANTS } from './styles';
 import { type ChatState } from './utils';

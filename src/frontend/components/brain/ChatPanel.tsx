@@ -19,7 +19,7 @@ import {
 	RESPONSE_DELAY_RANGE,
 	THINKING_DELAY_BASE,
 	THINKING_DELAY_RANGE
-} from '../../../../constants';
+} from '../../../constants';
 import { AI_RESPONSES, type ChatState, type Message } from './utils';
 
 type MessageBubbleProps = {

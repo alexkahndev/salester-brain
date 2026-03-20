@@ -11,7 +11,7 @@ import {
 	LIGHT_POS_NEG_3,
 	ROTATION_AMP,
 	ROTATION_SPEED
-} from '../../../../../constants';
+} from '../../../../constants';
 import { BrainModel } from '../BrainModel';
 import { MemoryPoints } from '../MemoryPoints';
 import { ThinkingWaves } from '../ThinkingWaves';

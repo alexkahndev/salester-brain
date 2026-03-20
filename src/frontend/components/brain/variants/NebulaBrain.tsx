@@ -13,7 +13,7 @@ import {
 	NEBULA_EMISSIVE_FACTOR,
 	ROTATION_AMP,
 	ROTATION_SPEED
-} from '../../../../../constants';
+} from '../../../../constants';
 import { BrainModel } from '../BrainModel';
 import { MemoryPoints } from '../MemoryPoints';
 import { ThinkingWaves } from '../ThinkingWaves';

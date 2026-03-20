@@ -12,7 +12,7 @@ import {
 	WAVE_COLOR_B,
 	WAVE_COLOR_G,
 	WAVE_COLOR_R
-} from '../../../../constants';
+} from '../../../constants';
 import { BrainModel } from './BrainModel';
 
 const WaveMaterial = shaderMaterial(

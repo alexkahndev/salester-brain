@@ -30,7 +30,7 @@ import {
 	ORB_RADIUS,
 	ORB_SCALE_HOVER,
 	ORB_SEGMENTS
-} from '../../../../constants';
+} from '../../../constants';
 import { useBrainSurfacePoints } from './BrainModel';
 
 type MemoryOrbProps = {
